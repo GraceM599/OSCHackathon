@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Calendar Tasks</h1>
+    <ul id="tasks">
+      Loading...
+    </ul>
+    <script>
+      async function loadCalendar() {
+        const res = await fetch("/api/calendar");
+        const data = await res.json();
+        const list = document.getElementById("tasks");
+        list.innerHTML = data
+          .map((task) => `<li>${task.task} — ${task.date}</li>`)
+          .join("");
+      }
+      loadCalendar();
+    </script>
+    <main>
+      <h2>📅 Calendar</h2>
+      <div class="card">
+        <p><em>Calendar will appear here once it’s connected.</em></p>
+      </div>
+    </main>
+  </body>
+</html>

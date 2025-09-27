@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greeting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Greeting Output</h1>
+  <div id="output">Loading...</div>
+  <script>
+    async function loadGreeting() {
+      const res = await fetch('/api/greeting');
+      const data = await res.json();
+      document.getElementById('output').textContent = data.message || data.output;
+    }
+    loadGreeting();
+  </script>
+</body>
+</html>

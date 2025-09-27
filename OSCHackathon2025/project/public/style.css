@@ -1,0 +1,106 @@
+/* === Reset and font === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* === Global colors === */
+:root {
+  --primary: #4f46e5;   /* Indigo */
+  --accent: #f59e0b;    /* Amber */
+  --light: #f3f4f6;
+  --dark: #1f2937;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header and nav === */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* === Main content === */
+main {
+  flex: 1;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+main p {
+  font-size: 1.2rem;
+  color: #4b5563;
+}
+
+/* === Footer === */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.card {
+  padding: 2rem;
+  border: 2px dashed var(--primary);
+  border-radius: 12px;
+  background: #eef2ff;
+  color: var(--primary);
+  font-style: italic;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #d97706;
+  transform: scale(1.05);
+}
