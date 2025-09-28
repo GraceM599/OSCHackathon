@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chat</title>
+</head>
+<body>
+    <h2>Chatbox</h2>
+    <input type="text" id="chatInput" placeholder="Type a message" />
+    <button onclick="sendMessage()">Send</button>
+
+    <div id="responseArea"></div>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('chatInput').value;
+
+            const response = await fetch('/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: input })
+            });
+
+            const data = await response.json();
+            document.getElementById('responseArea').innerText = data.reply || data.message;
+        }
+    </script>
+</body>
+</html>
