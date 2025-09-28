@@ -10,7 +10,7 @@ CalVin is a program and chatbot that can be trained to learn how to respond to u
 ---
 
 ## Technologies Used:
-- Python/HTML/Javascript
+- Python/HTML/JavaScript
 - JSON
 
 ---
